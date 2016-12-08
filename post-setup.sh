@@ -22,6 +22,19 @@ function upgrade {
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   apt-file update
   usermod -a -G sudo mwind
+  dwm
+}
+
+function dwm {
+  echo
+  echo "Installing DWM"
+  echo
+  cd /opt/
+  git clone http://git.suckless.org/dwm
+  cd dwm
+  ./configure
+  make
+  make install
 }
 
 if [[ $EUID -ne 0 ]];
