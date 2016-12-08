@@ -24,6 +24,7 @@ then
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
   echo "Setting up Terminator"
   mkdir ~/.config/terminator/
+  wget https://raw.githubusercontent.com/mattwind/default/master/.config/terminator/config -O ~/.config/terminator/config
 else
   echo "This should not be run as root!" 
   exit 1
