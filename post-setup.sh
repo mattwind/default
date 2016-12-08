@@ -22,7 +22,7 @@ function install {
   echo "Installing Software"
   echo
   apt-get install \
-    sudo git vim apt-file terminator \
+    sudo git vim apt-file terminator htop \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
     irssi \

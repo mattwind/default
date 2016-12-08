@@ -6,9 +6,13 @@ then
   echo
   echo "Setting wallpaper"
   wget https://i.imgur.com/Bxdzgq4.png -O ~/Pictures/wallpaper.png
-  sudo cp ~/Pictures/wallpaper.png /usr/share/slim/themes/debian-lines/background.png
+  echo "Customizing SLIM"
+  sudo wget https://github.com/mattwind/default/raw/master/slim/background.png -O /usr/share/slim/themes/debian-lines/background.png
+  sudo wget https://github.com/mattwind/default/raw/master/slim/panel.png -O /usr/share/slim/themes/debian-lines/panel.png
+  sudo wget https://raw.githubusercontent.com/mattwind/default/master/slim/slim.theme -O /usr/share/slim/themes/debian-lines/slim.theme
   echo 
   echo "Setting default xsession"
+  wget https://raw.githubusercontent.com/mattwind/default/master/.xsession -O ~/.xsession
 else
   echo "This should not be run as root!" 
   exit 1
