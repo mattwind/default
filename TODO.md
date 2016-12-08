@@ -5,3 +5,4 @@
 * Add power managment
 * Add mono
 * Add keepass
+* Add google-drive https://github.com/astrada/google-drive-ocamlfuse
