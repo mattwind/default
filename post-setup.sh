@@ -22,9 +22,9 @@ function install {
   echo "Installing Software"
   echo
   apt-get install \
-    sudo git vim apt-file \
-    slim feh xorg xscreensaver xcompmgr gtk-chtheme \
-    wireless-tools iw tcpdump wireshark ngrep nmap \
+    sudo git vim apt-file terminator \
+    slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
+    wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   dwm
@@ -38,7 +38,7 @@ function dwm {
   cd /opt/
   git clone http://git.suckless.org/dwm
   cd dwm
-  ./configure
+  apt-get install libxft-dev libxinerama-dev
   make
   make install
 }
