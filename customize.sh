@@ -15,10 +15,13 @@ then
   wget https://raw.githubusercontent.com/mattwind/default/master/.xsession -O ~/.xsession
   echo "Setting up vim"
   mkdir ~/.vim
+  mkdir ~/.vim/colors/
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   wget https://raw.githubusercontent.com/mattwind/default/master/.vimrc -O ~/.vimrc
   wget https://raw.githubusercontent.com/mattwind/default/master/.vim/colors/distinguished.vim -O ~/.vim/colors/distinguished.vim
   vim +PluginInstall +qall
+  echo "Setting up screen"
+  wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
 else
   echo "This should not be run as root!" 
   exit 1
