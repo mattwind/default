@@ -14,15 +14,22 @@ function clean {
 function upgrade {
   apt-get update
   apt-get upgrade -y
+  usermod -a -G sudo mwind
+  install
+}
+
+function install {
+  echo
+  echo "Installing Software"
+  echo
   apt-get install \
     sudo git vim apt-file \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme \
     wireless-tools iw tcpdump wireshark ngrep nmap \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
-  apt-file update
-  usermod -a -G sudo mwind
   dwm
+  apt-file update
 }
 
 function dwm {
