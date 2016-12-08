@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Starting Post Setup"
-
 if [[ $EUID -ne 0 ]];
 then
   echo "This script must be run as root" 
@@ -17,6 +15,9 @@ function quit {
 }
 
 function clean {
+  apt-get purge nano -y
+  apt-get autoremove -y
+  apt-get autolean
   apt-get clean
 }
 
