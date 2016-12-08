@@ -22,6 +22,8 @@ then
   vim +PluginInstall +qall
   echo "Setting up screen"
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
+  echo "Setting up Terminator"
+  mkdir ~/.config/terminator/
 else
   echo "This should not be run as root!" 
   exit 1
