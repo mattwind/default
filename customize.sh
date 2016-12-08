@@ -17,6 +17,7 @@ then
   mkdir ~/.vim
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   wget https://raw.githubusercontent.com/mattwind/default/master/.vimrc -O ~/.vimrc
+  wget https://raw.githubusercontent.com/mattwind/default/master/.vim/colors/distinguished.vim -O ~/.vim/colors/distinguished.vim
   vim +PluginInstall +qall
 else
   echo "This should not be run as root!" 

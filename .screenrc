@@ -1,0 +1,66 @@
+term screen-256color
+encoding UTF-8
+altscreen on
+mousetrack on
+# +AMDG
+vbell off
+# Remove some stupid / dangerous key bindings
+bind ^k
+#bind L
+bind ^\
+# navigate windows
+# right
+bindkey ^J prev
+# left
+bindkey ^L next
+# up
+bindkey ^P focus up
+# down
+# split windows
+bindkey ^O focus down
+# horizontally
+bindkey -k k5 split
+# vertically
+bindkey -k k6 split -v
+# window management
+# kill window
+bindkey ^K kill
+# rename window
+bindkey ^T title
+# new window 
+bindkey ^N screen
+# detach window 
+bindkey ^D remove
+# resize window
+bindkey -k k7 resize +1
+bindkey -k k8 resize -1
+# Scroll
+defscrollback 1000
+# up
+bindkey -d "^[[5S" eval copy "stuff 5\025"
+bindkey -m "^[[5S" stuff 5\025
+# down
+bindkey -d "^[[5T" eval copy "stuff 5\004"
+bindkey -m "^[[5T" stuff 5\004
+# up more
+bindkey -d "^[[25S" eval copy "stuff \025"
+bindkey -m "^[[25S" stuff \025
+# down more
+bindkey -d "^[[25T" eval copy "stuff \004"
+bindkey -m "^[[25T" stuff \004
+# new title
+shelltitle "$ |bash"
+startup_message off
+hardstatus alwayslastline
+hardstatus string '%{= W}%{= W}%-w%{= kk}%{= Wk}%n %t%{= kk}%{= W}%+w %-= %h% > %D,%M %d %Y%C%A%{-}'
+#termcapinfo xterm|xterms|screen-256color|xs|rxvt ti@:te@
+termcapinfo xrvt|screenr|xs|rxvt ti@:te@
+#caption always
+#caption string "%{= kB}%-Lw%{=s kB}%50>%n%f* %t %{-}%+Lw%<"
+# open programs with escape plus the binding; also names tab
+# avoid screen conflicting with vi bindings; basically,
+# whenever it sees "escape", screen waits for more
+# characters, and only passes the escape to the program
+# after a short pause; this sets the pause to zero
+maptimeout 0
+defc1 off
