@@ -8,6 +8,7 @@ then
   exit 1
 else
   apt-get update
-  apt-get install visudo git vim
+  apt-get upgrade -y
+  apt-get install visudo git vim -y
   usermod -a -G sudo mwind
 fi
