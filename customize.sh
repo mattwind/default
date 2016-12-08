@@ -16,9 +16,12 @@ then
   echo "Setting up vim"
   mkdir ~/.vim
   mkdir ~/.vim/colors/
+  echo "Grabbing Vundle"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   wget https://raw.githubusercontent.com/mattwind/default/master/.vimrc -O ~/.vimrc
+  echo "Changing color"
   wget https://raw.githubusercontent.com/mattwind/default/master/.vim/colors/distinguished.vim -O ~/.vim/colors/distinguished.vim
+  echo "Updating plugins"
   vim +PluginInstall +qall
   echo "Setting up screen"
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
