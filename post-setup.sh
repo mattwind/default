@@ -15,7 +15,6 @@ function upgrade {
   apt-get update
   apt-get upgrade -y
   usermod -a -G sudo mwind
-  install
 }
 
 function install {
@@ -50,6 +49,7 @@ then
   exit 1
 else
   upgrade
+  install
   clean
   quit
 fi
