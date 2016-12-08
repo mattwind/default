@@ -28,6 +28,11 @@ then
   echo "Setting up Terminator"
   mkdir ~/.config/terminator/
   wget https://raw.githubusercontent.com/mattwind/default/master/.config/terminator/config -O ~/.config/terminator/config
+  echo "Customizing dwm"
+  cd /opt/dwm/
+  sudo wget https://raw.githubusercontent.com/mattwind/default/master/dwm/config.h -O ./config.h
+  sudo make
+  sudo make install
 else
   echo "This should not be run as root!" 
   exit 1
