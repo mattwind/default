@@ -22,9 +22,10 @@ function install {
   echo "Installing Software"
   echo
   apt-get install \
-    sudo git vim apt-file terminator htop screen \
+    sudo git vim apt-file terminator htop screen gnome-screenshot \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
+    vlc \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   dwm
