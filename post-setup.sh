@@ -41,6 +41,15 @@ function dwm {
   apt-get install libxft-dev libxinerama-dev
   make
   make install
+  cd /opt/
+  git clone http://git.suckless.org/dmenu
+  cd dmenu
+  make
+  make install
+  cd /opt/
+  git clone http://git.suckless.org/dwmstatus
+  make
+  make install
 }
 
 if [[ $EUID -ne 0 ]];
