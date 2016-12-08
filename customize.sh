@@ -16,6 +16,8 @@ then
   echo "Setting up vim"
   mkdir ~/.vim
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  wget https://raw.githubusercontent.com/mattwind/default/master/.vimrc -O ~/.vimrc
+  vim +PluginInstall +qall
 else
   echo "This should not be run as root!" 
   exit 1
