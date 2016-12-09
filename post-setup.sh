@@ -21,12 +21,13 @@ function upgrade {
 function install {
   echo
   echo "Installing Software"
+  echo "Take a break this could take a few minutes..."
   echo
   apt-get install \
     sudo git vim apt-file terminator htop screen gnome-screenshot caja software-properties-common \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
-    monodevelop mono-complete \
+    monodevelop mono-complete virtualbox \
     vlc pavucontrol \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
