@@ -12,6 +12,7 @@ function clean {
 }
 
 function upgrade {
+  wget https://raw.githubusercontent.com/mattwind/default/master/apt/jessie -O /etc/apt/sources.list
   apt-get update
   apt-get upgrade -y
   usermod -a -G sudo mwind
@@ -25,7 +26,8 @@ function install {
     sudo git vim apt-file terminator htop screen gnome-screenshot caja software-properties-common \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
-    vlc \
+    monodevelop mono-complete \
+    vlc pavucontrol \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   dwm
