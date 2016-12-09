@@ -4,6 +4,9 @@ if [[ $EUID -ne 0 ]];
 then
   echo "Hello $USER"
   echo
+  echo "Getting some repos"
+  mkdir ~/repos
+  echo
   echo "Setting wallpaper"
   wget https://i.imgur.com/Bxdzgq4.png -O ~/Pictures/wallpaper.png
   echo "Customizing SLIM"
