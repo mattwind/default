@@ -4,6 +4,8 @@ if [[ $EUID -ne 0 ]];
 then
   echo "Hello $USER"
   echo
+  echo "Getting aliases"
+  wget https://raw.githubusercontent.com/mattwind/default/master/.bash_aliases -O ~/
   echo "Getting some repos"
   mkdir ~/repos
   echo
