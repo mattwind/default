@@ -10,7 +10,7 @@ then
   mkdir ~/repos
   echo
   echo "Setting wallpaper"
-  wget https://i.imgur.com/Bxdzgq4.png -O ~/Pictures/wallpaper.png
+  wget https://github.com/mattwind/default/raw/master/wallpaper.png -O ~/Pictures/wallpaper.png
   echo "Customizing SLIM"
   sudo wget https://github.com/mattwind/default/raw/master/slim/background.png -O /usr/share/slim/themes/debian-lines/background.png
   sudo wget https://github.com/mattwind/default/raw/master/slim/panel.png -O /usr/share/slim/themes/debian-lines/panel.png
