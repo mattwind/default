@@ -1,6 +1,5 @@
 ### Todo
 
-* Setup default aliases
 * Setup NFO 
 * Setup SSH directory
 * Add keepass
