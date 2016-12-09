@@ -39,7 +39,7 @@ function install {
   apt-file update
 }
 
-google-drive {
+function google-drive {
   groupadd fuse
   adduser $user fuse
   chown root.$user /dev/fuse
