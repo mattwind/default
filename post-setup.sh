@@ -28,7 +28,7 @@ function install {
   apt-get install \
     sudo git vim apt-file terminator htop screen gnome-screenshot caja software-properties-common \
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
-    wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome ssh \
+    wireless-tools iw tcpdump ngrep nmap network-manager-gnome ssh \
     monodevelop mono-complete virtualbox \
     vlc pavucontrol mate-power-manager mate-media-pulse jmtpfs \
     chromium irssi libreoffice gimp \
