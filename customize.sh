@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+user=mwind
+
 if [[ $EUID -ne 0 ]];
 then
   echo "Hello $USER"
@@ -43,6 +45,11 @@ then
   echo
   rm -rf ~/Public
   rm -rf ~/Templates
+  echo "Setup google drive"
+  opam init
+  opam update
+  opam install google-drive-ocamlfuse
+  . /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   sync
 else
   echo "This should not be run as root!" 

@@ -1,6 +1,7 @@
 alias ssh='cat ~/repos/dotfiles/.ssh/config.d/* >~/.ssh/config; ssh'
 
 alias vi='vim'
+alias date='date +"%c"'
 
 # ls
 alias lt='ls -lt | head'
