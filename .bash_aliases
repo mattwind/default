@@ -1,4 +1,4 @@
-alias ssh='cat ~/repos/mwind/dotfiles/.ssh/config.d/* >~/.ssh/config; ssh'
+alias ssh='cat ~/repos/dotfiles/.ssh/config.d/* >~/.ssh/config; ssh'
 
 alias vi='vim'
 
@@ -42,13 +42,13 @@ mynfo()
 {
   if [ "$1" == "list" ]
   then
-    ls $2 ~/repos/mwind/nfo/ 
+    ls $2 ~/repos/nfo/ 
     return 1
   fi
 
-  if [ -e ~/repos/mwind/nfo/$1 ]
+  if [ -e ~/repos/nfo/$1 ]
   then
-    cat ~/repos/mwind/nfo/$1
+    cat ~/repos/nfo/$1
   else
     echo "nothing found"
   fi
