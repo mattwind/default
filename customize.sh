@@ -28,6 +28,7 @@ then
   wget https://raw.githubusercontent.com/mattwind/default/master/.vim/colors/distinguished.vim -O ~/.vim/colors/distinguished.vim
   echo "Updating plugins"
   vim +PluginInstall +qall
+  reset
   echo "Setting up screen"
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
   echo "Setting up Terminator"
