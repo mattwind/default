@@ -48,7 +48,7 @@ then
   echo "Setup google drive"
   opam init
   opam update
-  opam install google-drive-ocamlfuse
+  opam install google-drive-ocamlfuse -y
   sudo ln -s /home/$user/.opam/system/bin/google-drive-ocamlfuse /usr/bin/google-drive-ocamlfuse
   wget https://raw.githubusercontent.com/mattwind/default/master/scripts/gdfuse -O /usr/bin/gdfuse
   . /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
