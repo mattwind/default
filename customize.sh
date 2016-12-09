@@ -52,7 +52,7 @@ then
   sudo ln -s /home/$user/.opam/system/bin/google-drive-ocamlfuse /usr/bin/google-drive-ocamlfuse
   wget https://raw.githubusercontent.com/mattwind/default/master/scripts/gdfuse -O /usr/bin/gdfuse
   . /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-  /home/$user/.opam/system/bin/google-drive-ocamlfuse
+  google-drive-ocamlfuse ~/Documents/
   sync
 else
   echo "This should not be run as root!" 
