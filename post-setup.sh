@@ -31,7 +31,7 @@ function install {
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome ssh \
     monodevelop mono-complete virtualbox \
     vlc pavucontrol mate-power-manager mate-media-pulse jmtpfs \
-    irssi \
+    chromium irssi libreoffice gimp \
     m4 libcurl4-gnutls-dev libfuse-dev libsqlite3-dev opam ocaml make fuse camlp4-extra pkg-config zlib1g zlib1g-dev \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   dwm

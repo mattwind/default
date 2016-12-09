@@ -50,6 +50,7 @@ then
   opam update
   opam install google-drive-ocamlfuse
   . /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+  /home/$user/.opam/system/bin/google-drive-ocamlfuse
   sync
 else
   echo "This should not be run as root!" 
