@@ -2,5 +2,7 @@ trayer --expand true --widthtype request --transparent true --alpha 255 --edge b
 dwmstatus &
 feh --bg-scale ~/Pictures/wallpaper.png &
 nm-applet &
+mate-power-manager &
+mate-volume-control-applet &
 xscreensaver -no-splash &
 dwm

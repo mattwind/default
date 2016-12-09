@@ -1,6 +1,7 @@
 ### Todo
 
-* Add volume mixer
-* Add power managment
+* Setup default aliases
+* Setup NFO 
+* Setup SSH directory
 * Add keepass
 * Add google-drive https://github.com/astrada/google-drive-ocamlfuse

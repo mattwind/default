@@ -9,6 +9,7 @@ function clean {
   apt-get autoremove -y
   apt-get autolean
   apt-get clean
+  mkdir /mnt/samsung/
 }
 
 function upgrade {
@@ -28,7 +29,7 @@ function install {
     slim feh xorg xscreensaver xcompmgr gtk-chtheme trayer \
     wireless-tools iw tcpdump wireshark ngrep nmap network-manager-gnome \
     monodevelop mono-complete virtualbox \
-    vlc pavucontrol \
+    vlc pavucontrol mate-power-manager mate-media-pulse jmtpfs \
     irssi \
     build-essential libqt4-dev qt4-qtconfig libssl-dev -y
   dwm
