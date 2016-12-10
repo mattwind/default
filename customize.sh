@@ -34,7 +34,8 @@ then
   echo "Setting up screen"
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
   echo "Setting up Terminator"
-  mkdir ~/.config/terminator/
+  mkdir ~/.config
+  mkdir ~/.config/terminator
   wget https://raw.githubusercontent.com/mattwind/default/master/.config/terminator/config -O ~/.config/terminator/config
   echo "Customizing dwm"
   sudo wget https://raw.githubusercontent.com/mattwind/default/master/dwm/config.h -O /opt/dwm/config.h
