@@ -82,12 +82,13 @@ function getuser {
   fi
 }
 
+getuser
+
 if [[ $EUID -ne 0 ]];
 then
   echo "This script must be run as root" 
   exit 1
 else
-  getuser
   upgrade $user
   install
   clean
