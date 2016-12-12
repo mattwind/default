@@ -28,7 +28,7 @@ function install {
   echo "Installing Software"
   echo "Take a break this could take a few minutes..."
   echo
-  apt-get install `wget -q -O - https://raw.githubusercontent.com/mattwind/default/master/packages.list` -y
+  apt-get install `wget -q -O - https://raw.githubusercontent.com/mattwind/default/master/apt/packages.list` -y
   dwm
   google-drive
   apt-file update
