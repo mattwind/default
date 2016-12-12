@@ -42,6 +42,11 @@ then
   cd /opt/dwm/
   sudo make
   sudo make install
+  echo "Customizing dwmstatus"
+  sudo wget https://raw.githubusercontent.com/mattwind/default/master/dwmstatus/dwmstatus.c -O /opt/dwmstatus/dwmstatus.c
+  cd /opt/dwmstatus/
+  sudo make
+  sudo make install
   echo "Clean up"
   echo
   rm -rf ~/Public
