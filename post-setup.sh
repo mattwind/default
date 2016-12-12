@@ -49,7 +49,6 @@ function dwm {
   cd /opt/
   git clone http://git.suckless.org/dwm
   cd dwm
-  apt-get install libxft-dev libxinerama-dev -y
   make
   make install
   echo "Building dmenu"
