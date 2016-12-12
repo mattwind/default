@@ -76,7 +76,7 @@ function getuser {
 
   if [ "$reply" != "y" ];
   then
-    getuser
+    exit 1
   else
     user=$username
   fi
