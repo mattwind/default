@@ -72,7 +72,7 @@ funciton getuser {
   echo -n "You entered $username, is that correct? (y/n): "
   read reply
 
-  if [ "$reply" != "y" ] then
+  if [ "$reply" != "y" ]; then
     getuser
   else
     user="$username"
