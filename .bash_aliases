@@ -58,3 +58,4 @@ alias nfo=mynfo
 
 # mount samsung
 alias samsung='sudo jmtpfs -o allow_other /mnt/samsung/'
+
