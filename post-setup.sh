@@ -2,6 +2,9 @@
 user=mwind
 
 function quit {
+  echo
+  echo "Finished now rebooting"
+  reboot
   exit
 }
 
