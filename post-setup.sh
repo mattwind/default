@@ -67,19 +67,20 @@ function dwm {
   echo "Done"
 }
 
-funciton getuser {
+function getuser {
   echo
   echo -n "What is your username: "
   read username
   echo -n "You entered $username, is that correct? (y/n): "
   read reply
 
-  if [ "$reply" != "y" ]; then
+  if [ "$reply" != "y" ];
+  then
     getuser
   else
-    user="$username"
+    user=$username
   fi
- }
+}
 
 if [[ $EUID -ne 0 ]];
 then
