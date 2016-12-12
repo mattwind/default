@@ -50,21 +50,26 @@ function dwm {
   echo
   echo "Installing DWM"
   echo
+  echo "Building dwm"
   cd /opt/
   git clone http://git.suckless.org/dwm
   cd dwm
   apt-get install libxft-dev libxinerama-dev -y
   make
   make install
+  echo "Building dmenu"
   cd /opt/
   git clone http://git.suckless.org/dmenu
   cd dmenu
   make
   make install
+  echo "Building dwmstatus"
   cd /opt/
   git clone http://git.suckless.org/dwmstatus
+  cd dwmstatus
   make
   make install
+  echo "Done"
 }
 
 if [[ $EUID -ne 0 ]];
