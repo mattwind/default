@@ -71,6 +71,7 @@ function getuser {
   echo
   echo -n "What is your username: "
   read username
+  echo
   echo -n "You entered $username, is that correct? (y/n): "
   read reply
 
