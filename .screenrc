@@ -1,4 +1,5 @@
-term screen-256color
+# custom screenrc
+#term screen-256color
 encoding UTF-8
 altscreen on
 mousetrack on
