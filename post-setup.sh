@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-user=mwind
 
 function quit {
   echo
@@ -66,12 +65,27 @@ function dwm {
   echo "Done"
 }
 
+funciton getuser {
+  echo
+  echo -n "What is your username: "
+  read username
+  echo -n "You entered $username, is that correct? (y/n): "
+  read reply
+
+  if [ "$reply" != "y" ] then
+    getuser
+  else
+    user="$username"
+  fi
+ }
+
 if [[ $EUID -ne 0 ]];
 then
   echo "This script must be run as root" 
   exit 1
 else
-  upgrade
+  getuser
+  upgrade $user
   install
   clean
   quit

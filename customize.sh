@@ -1,10 +1,9 @@
 #!/bin/env bash
-
-user=mwind
+user=`whoami`
 
 if [[ $EUID -ne 0 ]];
 then
-  echo "Hello $USER"
+  echo "Hello $user"
   echo
   echo "Getting aliases"
   wget https://raw.githubusercontent.com/mattwind/default/master/.bash_aliases -O ~/
