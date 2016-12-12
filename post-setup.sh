@@ -19,6 +19,7 @@ function upgrade {
   wget https://raw.githubusercontent.com/mattwind/default/master/apt/jessie -O /etc/apt/sources.list
   apt-get update
   apt-get upgrade -y
+  echo "Adding $user to sudoers"
   usermod -a -G sudo $user
 }
 
@@ -34,6 +35,7 @@ function install {
 }
 
 function google-drive {
+  echo "Adding $user to fuse group"
   groupadd fuse
   adduser $user fuse
   chown root.$user /dev/fuse
