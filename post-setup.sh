@@ -8,7 +8,7 @@ function quit {
 function clean {
   apt-get purge nano -y
   apt-get autoremove -y
-  apt-get autolean
+  apt-get autoclean
   apt-get clean
   mkdir /mnt/samsung/
 }
