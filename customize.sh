@@ -10,8 +10,6 @@ then
   echo "Getting some repos"
   mkdir ~/repos
   echo
-  echo "Setting wallpaper"
-  wget https://github.com/mattwind/default/raw/master/wallpaper.png -O ~/Pictures/wallpaper.png
   echo "Customizing SLIM"
   sudo wget https://github.com/mattwind/default/raw/master/slim/background.png -O /usr/share/slim/themes/debian-lines/background.png
   sudo wget https://github.com/mattwind/default/raw/master/slim/panel.png -O /usr/share/slim/themes/debian-lines/panel.png
@@ -32,6 +30,8 @@ then
   reset
   echo "Setting up screen"
   wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
+  echo "Getting wallpaper"
+  wget https://github.com/mattwind/default/raw/master/wallpaper.png -O /home/$user/Pictures/wallpaper.png
   echo "Setting up Terminator"
   mkdir ~/.config
   mkdir ~/.config/terminator
