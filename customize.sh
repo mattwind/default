@@ -3,8 +3,8 @@ user=`whoami`
 
 if [[ $EUID -ne 0 ]];
 then
-  echo "Hello $user"
-  echo
+  echo "Customizing Slim"
+  sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
   mkdir ~/repos
   cd ~/repos
   echo "Clone default project"
@@ -42,8 +42,6 @@ then
   echo
   rm -rf ~/Public
   rm -rf ~/Templates
-  echo "Customizing Slim"
-  sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
   sync
   sudo /etc/init.d/slim restart
 else
