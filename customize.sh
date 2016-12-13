@@ -8,13 +8,13 @@ then
   mkdir ~/repos
   cd ~/repos
   echo "Clone default project"
-  git --quiet clone https://github.com/mattwind/default.git
+  git clone https://github.com/mattwind/default.git ~/repos/default
   echo 
   echo "Setting up dotfiles"
   cp -R ~/repos/default/dotfiles/* ~/
   echo
   echo "Clone vundle"
-  git --quiet clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   echo "Updating vim plugins"
   vim +PluginInstall +qall
   reset
@@ -37,7 +37,7 @@ then
   opam update
   opam install google-drive-ocamlfuse -y
   sudo ln -s /home/$user/.opam/system/bin/google-drive-ocamlfuse /usr/bin/google-drive-ocamlfuse
-  sudo cp ~/repos/default/scripts/gdfuse -O /usr/bin/gdfuse
+  sudo cp ~/repos/default/scripts/gdfuse /usr/bin/gdfuse
   #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
   sync
