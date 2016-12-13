@@ -59,7 +59,7 @@ then
   #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
   sync
-  sudo system restart slim
+  sudo /etc/init.d/slim restart
 else
   echo "This should not be run as root!" 
   exit 1
