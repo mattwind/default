@@ -15,3 +15,10 @@ Configure all the neat stuff
 ### Screenshot
 
 ![alt tag](screenshot.png)
+
+### Todo
+
+* Setup NFO Repository
+* Setup dynamic SSH directory
+* Add keepass
+* Add custom scripts
