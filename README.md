@@ -4,7 +4,7 @@ My really simple default linux setup, in just two commands!
 
 Run this after a vanilla debian net install. It will grab all the wanted packages.
 
-```su -c "wget -q https://raw.githubusercontent.com/mattwind/default/master/post-setup.sh -O /tmp/setup; bash /tmp/setup `whoami`"```
+```su -c "wget https://raw.githubusercontent.com/mattwind/default/master/post-setup.sh -O /tmp/s; bash /tmp/s `whoami`"```
 
 ### Step 2) Customize it
 
