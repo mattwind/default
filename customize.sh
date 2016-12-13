@@ -11,7 +11,7 @@ then
   git clone https://github.com/mattwind/default.git ~/repos/default
   echo 
   echo "Setting up dotfiles"
-  cp -R ~/repos/default/dotfiles/* ~/
+  cp -r ~/repos/default/dotfiles/. ~/
   echo
   echo "Clone vundle"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
