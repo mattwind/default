@@ -2,7 +2,7 @@ My really simple default linux setup, in just two commands!
 
 ### Step 1) Post setup
 
-Run this after a vanilla debian net install. It will grab all the wanted packages.
+Run this after a vanilla debian net install. It will grab all the wanted [packages](https://github.com/mattwind/default/blob/master/apt/packages.list)
 
 ```su -c "wget https://raw.github.com/mattwind/default/master/post-setup.sh -O /tmp/s; bash /tmp/s `whoami`"```
 
