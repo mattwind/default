@@ -73,14 +73,14 @@ then
   echo "This script must be run as root" 
   exit 1
 else
-  read -p "$user are you sure? " -n 1 -r
-  echo    # (optional) move to a new line
-  if [[ $REPLY =~ ^[Yy]$ ]]
-  then
+#  read -p "$user are you sure? " -n 1 -r
+#  echo    # (optional) move to a new line
+#  if [[ $REPLY =~ ^[Yy]$ ]]
+#  then
     upgrade
     install
     clean
     quit
-  fi
+#  fi
 fi
 

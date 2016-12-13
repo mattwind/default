@@ -37,12 +37,14 @@ then
   opam update
   opam install google-drive-ocamlfuse -y
   sudo ln -s /home/$user/.opam/system/bin/google-drive-ocamlfuse /usr/bin/google-drive-ocamlfuse
-  sudo cp ~/repos/default/scripts/gdfuse /usr/bin/gdfuse
+  sudo mv ~/repos/default/scripts/gdfuse /usr/bin/gdfuse
   #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
-  sync
+  echo "Add Path"
+  echo PATH=~/repos/default/scripts/:$PATH >> ~/.profile
   echo "Customizing Slim"
   sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
+  sync
   sudo /etc/init.d/slim restart
 else
   echo "This should not be run as root!" 
