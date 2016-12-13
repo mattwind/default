@@ -5,44 +5,46 @@ if [[ $EUID -ne 0 ]];
 then
   echo "Hello $user"
   echo
-  echo "Getting aliases"
-  wget https://raw.githubusercontent.com/mattwind/default/master/.bash_aliases -O ~/
-  echo "Getting some repos"
   mkdir ~/repos
+  echo "Clone default project"
+  cd ~/repos
+  git --quiet clone https://github.com/mattwind/default.git
+  echo 
+  echo "Setting aliases"
+  cp ~/repos/default/.bash_aliases ~/
   echo
-  echo "Customizing SLIM"
-  sudo wget https://github.com/mattwind/default/raw/master/slim/background.png -O /usr/share/slim/themes/debian-lines/background.png
-  sudo wget https://github.com/mattwind/default/raw/master/slim/panel.png -O /usr/share/slim/themes/debian-lines/panel.png
-  sudo wget https://raw.githubusercontent.com/mattwind/default/master/slim/slim.theme -O /usr/share/slim/themes/debian-lines/slim.theme
+  echo "Customizing Slim"
+  sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
   echo 
   echo "Setting default xsession"
-  wget https://raw.githubusercontent.com/mattwind/default/master/.xsession -O ~/.xsession
+  cp ~/repos/default/.xsession ~/
   echo "Setting up vim"
   mkdir ~/.vim
   mkdir ~/.vim/colors/
-  echo "Grabbing Vundle"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  wget https://raw.githubusercontent.com/mattwind/default/master/.vimrc -O ~/.vimrc
-  echo "Changing color"
-  wget https://raw.githubusercontent.com/mattwind/default/master/.vim/colors/distinguished.vim -O ~/.vim/colors/distinguished.vim
-  echo "Updating plugins"
+  echo "Clone vundle"
+  git --quiet clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  echo "Setting custom vimrc"
+  cp ~/repos/default/.vimrc ~/
+  echo "Setting vim color"
+  cp ~/repos/default/.vim/colors/distinguished.vim ~/.vim/colors/
+  echo "Updating vim plugins"
   vim +PluginInstall +qall
   reset
   echo "Setting up screen"
-  wget https://raw.githubusercontent.com/mattwind/default/master/.screenrc -O ~/.screenrc
+  cp ~/repos/default/.screenrc ~/
   echo "Getting wallpaper"
-  wget https://github.com/mattwind/default/raw/master/wallpaper.png -O /home/$user/Pictures/wallpaper.png
+  cp ~/repos/default/wallpaper.png ~/Pictures/
   echo "Setting up Terminator"
   mkdir ~/.config
   mkdir ~/.config/terminator
-  wget https://raw.githubusercontent.com/mattwind/default/master/.config/terminator/config -O ~/.config/terminator/config
+  cp ~/repos/default/terminator/config ~/.config/terminator/
   echo "Customizing dwm"
-  sudo wget https://raw.githubusercontent.com/mattwind/default/master/dwm/config.h -O /opt/dwm/config.h
+  sudo cp ~/repos/default/dwm/config.h /opt/dwm/config.h
   cd /opt/dwm/
   sudo make
   sudo make install
   echo "Customizing dwmstatus"
-  sudo wget https://raw.githubusercontent.com/mattwind/default/master/dwmstatus/dwmstatus.c -O /opt/dwmstatus/dwmstatus.c
+  sudo cp ~/repos/default/dwmstatus/dwmstatus.c /opt/dwmstatus/dwmstatus.c
   cd /opt/dwmstatus/
   sudo make
   sudo make install
@@ -58,9 +60,7 @@ then
   sudo wget https://raw.githubusercontent.com/mattwind/default/master/scripts/gdfuse -O /usr/bin/gdfuse
   #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
-  echo "Checkout this project"
-  cd ~/repos
-  git clone https://github.com/mattwind/default.git
+  echo "Copying GTK Theme Files"
   cp -R ~/repos/default/.themes* ~/
   sync
   sudo /etc/init.d/slim restart
