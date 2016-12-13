@@ -12,7 +12,6 @@ then
   echo 
   echo "Setting up dotfiles"
   cp -R ~/repos/default/dotfiles/* ~/
-  cp ~/repos/default/wallpaper.png ~/Pictures/
   echo
   echo "Clone vundle"
   git --quiet clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
