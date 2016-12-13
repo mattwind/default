@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Gray
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=TraditionalOkTest
+MetacityTheme=Fog
+IconTheme=gnome
+GtkColorScheme=fg_color:#000000000000,bg_color:#88888a8a8585,text_color:#000000000000,base_color:#bababdbdb6b6,selected_fg_color:#ffffffffffff,selected_bg_color:#5ce75ce75ce7,tooltip_fg_color:#000000000000,tooltip_bg_color:#f5f5f5f5b5b5
+CursorTheme=DMZ-Black
+CursorSize=16
+NotificationTheme=slider
+BackgroundImage=/home/mwind/Downloads/Firefox_wallpaper.png

@@ -58,6 +58,10 @@ then
   sudo wget https://raw.githubusercontent.com/mattwind/default/master/scripts/gdfuse -O /usr/bin/gdfuse
   #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
   #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
+  echo "Checkout this project"
+  cd ~/repos
+  git clone https://github.com/mattwind/default.git
+  cp -R ~/repos/default/.themes* ~/
   sync
   sudo /etc/init.d/slim restart
 else
