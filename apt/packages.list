@@ -17,6 +17,7 @@ irssi
 iw
 jmtpfs
 libcurl4-gnutls-dev
+libfreetype6-dev
 libfuse-dev
 libqt4-dev
 libreoffice

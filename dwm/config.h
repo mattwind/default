@@ -1,25 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
+static const char *fonts[] = {
+	"monospace:size=10"
+};
+static const char dmenufont[]       = "monospace:size=10";
+static const char normbordercolor[] = "#444444";
+static const char normbgcolor[]     = "#222222";
+static const char normfgcolor[]     = "#bbbbbb";
+static const char selbordercolor[]  = "#000000";
+static const char selbgcolor[]      = "#000000";
+static const char selfgcolor[]      = "#eeeeee";
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 16;       /* snap pixel */
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, 0: display systray on the last monitor*/
+static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#000000";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel] =  { col_gray4, col_cyan,  col_cyan  },
-};
 
 /* tagging */
-static const char *tags[] = { "A", "T", "H", "E", "R", "0", "S" };
+static const char *tags[] = { "A", "T", "H", "E", "R", "O", "S" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -56,31 +58,33 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+
 static const char *termcmd[]  = { "terminator", NULL };
 static const char *xscreensavercmd[]  = { "/usr/bin/xscreensaver-command", "-lock", NULL };
 static const char *screenshot[]  = { "/usr/bin/gnome-screenshot", "--interactive", NULL };
 static const char *keepass[]  = { "/usr/bin/mono", "/opt/keepass/KeePass.exe", NULL };
 static const char *pavucontrol[]  = { "/usr/bin/pavucontrol", NULL };
 
+
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshot } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_l,	     spawn,        {.v = xscreensavercmd } },
-	{ MODKEY|ShiftMask,             XK_k,	     spawn,        {.v = keepass } },
-	{ MODKEY|ShiftMask,             XK_a,	     spawn,        {.v = pavucontrol} },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+  /* modifier                     key        function        argument */
+  { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+  { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = screenshot } },
+  { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+  { MODKEY|ShiftMask,             XK_l,      spawn,        {.v = xscreensavercmd } },
+  { MODKEY|ShiftMask,             XK_k,      spawn,        {.v = keepass } },
+  { MODKEY|ShiftMask,             XK_a,      spawn,        {.v = pavucontrol} },
+  { MODKEY,                       XK_b,      togglebar,      {0} },
+  { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+  { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+  { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+  { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+  { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+  { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+  { MODKEY,                       XK_Return, zoom,           {0} },
+  { MODKEY,                       XK_Tab,    view,           {0} },
+  { MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
