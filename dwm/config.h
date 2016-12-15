@@ -16,7 +16,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "web", "term", "virt", "conf", "gfx" };
+static const char *tags[] = { "web", "term", "virt", "conf", "gfx", "caja", "keep" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -55,6 +55,7 @@ static const char *xscreensavercmd[]  = { "/usr/bin/xscreensaver-command", "-loc
 static const char *screenshot[]  = { "/usr/bin/gnome-screenshot", "--interactive", NULL };
 static const char *keepass[]  = { "/usr/bin/mono", "/opt/keepass/KeePass.exe", NULL };
 static const char *pavucontrol[]  = { "/usr/bin/pavucontrol", NULL };
+static const char *caja[]  = { "/usr/bin/caja", NULL };
 
 static Key keys[] = {
  /* modifier                     key        function        argument */
@@ -64,6 +65,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          {.v = xscreensavercmd } },
 	{ MODKEY|ShiftMask,             XK_k,      spawn,          {.v = keepass } },
 	{ MODKEY|ShiftMask,             XK_a,      spawn,          {.v = pavucontrol} },
+	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = caja} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
