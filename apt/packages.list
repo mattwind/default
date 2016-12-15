@@ -55,6 +55,11 @@ wireless-tools
 xcompmgr
 xorg
 xscreensaver
+xscreensaver-data
+xscreensaver-data-extra
+xscreensaver-gl
+xscreensaver-gl-extra
+xscreensaver-screensaver-bsod
 zip
 zlib1g
 zlib1g-dev
