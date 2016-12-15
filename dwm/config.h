@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
@@ -16,7 +16,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "A", "T", "H", "E", "R", "O", "S" };
+static const char *tags[] = { "web", "term", "virt", "conf", "gfx" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
