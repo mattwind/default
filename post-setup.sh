@@ -52,7 +52,8 @@ function dwm {
   mkdir dwm-6.0
   wget http://git.suckless.org/dwm/snapshot/dwm-6.0.tar.gz
   tar xvf dwm-6.0.tar.gz 
-  cd dwm-6.0
+  mv dwm-6.0 dwm
+  cd dwm
   wget http://dwm.suckless.org/patches/dwm-systray-6.0.diff
   patch < dwm-systray-6.0.diff  
   make
