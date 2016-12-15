@@ -46,6 +46,7 @@ sudo
 tcpdump
 terminator
 trayer
+unzip
 vim
 virtualbox
 vlc
@@ -53,5 +54,6 @@ wireless-tools
 xcompmgr
 xorg
 xscreensaver
+zip
 zlib1g
 zlib1g-dev
