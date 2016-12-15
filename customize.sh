@@ -23,9 +23,7 @@ then
   opam update
   opam install google-drive-ocamlfuse -y
   sudo ln -s /home/$user/.opam/system/bin/google-drive-ocamlfuse /usr/bin/google-drive-ocamlfuse
-  sudo mv ~/repos/default/scripts/gdfuse /usr/bin/gdfuse
-  #. /home/$user/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-  #mount | grep /home/$user/Documents >/dev/null || google-drive-ocamlfuse /home/$user/Documents
+  sudo mv ~/repos/default/scripts/gdrive /usr/bin/gdrive
   echo "Add Path"
   echo PATH=~/repos/default/scripts/:$PATH >> ~/.profile
   echo "Customizing dwm"

@@ -4,6 +4,7 @@ build-essential
 caja
 camlp4-extra
 chromium
+dos2unix
 feh
 ffmpeg
 fuse

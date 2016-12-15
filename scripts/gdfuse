@@ -1,4 +1,0 @@
-#!/bin/env bash
-su $USERNAME -l -c "~/.opam/system/bin/google-drive-ocamlfuse -label $1 $*"
-exit 0
-
