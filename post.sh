@@ -4,52 +4,66 @@ user=$1
 if [ "$user" == "" ];
 then
 	echo "No user specified"
-	echo "./post.sh mwind"
 	exit 1
 fi
 
-apt-get install git -y
+echo "Install Git"
+apt-get install git -y >/dev/null
+
+echo "Clone default project"
 cd /tmp
-git clone https://github.com/mattwind/default.git
-cd default
+git clone https://github.com/mattwind/default.git >/dev/null
 
-cp /tmp/default/apt/jessie /ect/apt/source.list
-apt-get update
-apt-get upgrade -y
+echo "Apt Update"
+cp /tmp/default/apt/jessie /etc/apt/sources.list >/dev/null
+apt-get update >/dev/null
+apt-get upgrade -y >/dev/null
 
-apt-get install `cat apt/packages.list` -y
+echo "Install Packages"
+apt-get install `cat apt/packages.list` -y >/dev/null
 
-groupadd fuse
-adduser $user fuse
-chown root.$user /dev/fuse
-chmod 660 /dev/fuse
+echo "Add $user to fuse group"
+groupadd fuse >/dev/null
+adduser $user fuse >/dev/null
+chown root.$user /dev/fuse >/dev/null
+chmod 660 /dev/fuse >/dev/null
 
-usermod -a -G sudo $user
+echo "Add $user to sudoers"
+usermod -a -G sudo $user >/dev/null
 
-tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/
-cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/
+echo "Extract dwm source"
+tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/ >/dev/null
+cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/ >/dev/null
 cd /opt/dwm-6.0/
-ln -s /opt/dwm-6.0/ /opt/dwm/
-patch < dwm-systray-6.0.diff  
-make
-make install
+ln -s /opt/dwm-6.0/ /opt/dwm/ >/dev/null
 
+echo "Add systray patch"
+patch < dwm-systray-6.0.diff >/dev/null
+
+echo "Compile dwm"
+make >/dev/null
+make install >/dev/null
+
+echo "Setup dmenu"
 cd /opt/
-git clone http://git.suckless.org/dmenu
+git clone http://git.suckless.org/dmenu >/dev/null
 cd dmenu
-make
-make install
+make >/dev/null
+make install >/dev/null
 
+echo "Setup dwmstatus"
 cd /opt/
-git clone http://git.suckless.org/dwmstatus
+git clone http://git.suckless.org/dwmstatus >/dev/null
 cd dwmstatus
-make
-make install
+make >/dev/null
+make install >/dev/null
 
-apt-get purge nano -y
-apt-get autoremove -y
-apt-get autoclean
-apt-get clean
+echo "Clean up"
+apt-get purge nano -y >/dev/null
+apt-get autoremove -y >/dev/null
+apt-get autoclean >/dev/null
+apt-get clean >/dev/null
 mkdir /mnt/samsung/
 
+echo "Reboot"
 reboot
