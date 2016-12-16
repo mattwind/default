@@ -13,11 +13,10 @@ cd /tmp
 git clone https://github.com/mattwind/default.git
 cd default
 
-cp /tmp/apt/jessie /ect/apt/source.list
+cp /tmp/default/apt/jessie /ect/apt/source.list
 apt-get update
 apt-get upgrade -y
 
-usermod -a -G sudo $user
 apt-get install `cat apt/packages.list` -y
 
 groupadd fuse
@@ -25,9 +24,12 @@ adduser $user fuse
 chown root.$user /dev/fuse
 chmod 660 /dev/fuse
 
-tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/dwm/
-cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm/
-cd /opt/dwm/
+usermod -a -G sudo $user
+
+tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/
+cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/
+cd /opt/dwm-6.0/
+ln -s /opt/dwm-6.0/ /opt/dwm/
 patch < dwm-systray-6.0.diff  
 make
 make install
