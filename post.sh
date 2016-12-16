@@ -33,7 +33,7 @@ usermod -a -G sudo $user
 
 echo "Extract dwm source"
 tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/
-mv /opt/dwm-5.0/ /opt/dwm/
+mv /opt/dwm-6.0/ /opt/dwm/
 cp /tmp/default/dwm/dwm-systray-6.0.diff /opt/dwm/
 cd /opt/dwm/
 
