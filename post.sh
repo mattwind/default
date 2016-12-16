@@ -12,57 +12,57 @@ apt-get install git -y >/dev/null
 
 echo "Clone default project"
 cd /tmp
-git clone https://github.com/mattwind/default.git >/dev/null
+git clone https://github.com/mattwind/default.git
 
 echo "Apt Update"
-cp /tmp/default/apt/jessie /etc/apt/sources.list >/dev/null
-apt-get update >/dev/null
-apt-get upgrade -y >/dev/null
+cp /tmp/default/apt/jessie /etc/apt/sources.list
+apt-get update
+apt-get upgrade -y
 
 echo "Install Packages"
-apt-get install `cat apt/packages.list` -y >/dev/null
+apt-get install `cat apt/packages.list` -y
 
 echo "Add $user to fuse group"
-groupadd fuse >/dev/null
-adduser $user fuse >/dev/null
-chown root.$user /dev/fuse >/dev/null
-chmod 660 /dev/fuse >/dev/null
+groupadd fuse
+adduser $user fuse
+chown root.$user /dev/fuse
+chmod 660 /dev/fuse
 
 echo "Add $user to sudoers"
-usermod -a -G sudo $user >/dev/null
+usermod -a -G sudo $user
 
 echo "Extract dwm source"
-tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/ >/dev/null
-cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/ >/dev/null
+tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/
+cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/
 cd /opt/dwm-6.0/
-ln -s /opt/dwm-6.0/ /opt/dwm/ >/dev/null
+ln -s /opt/dwm-6.0/ /opt/dwm/
 
 echo "Add systray patch"
-patch < dwm-systray-6.0.diff >/dev/null
+patch < dwm-systray-6.0.diff  
 
 echo "Compile dwm"
-make >/dev/null
-make install >/dev/null
+make
+make install
 
 echo "Setup dmenu"
 cd /opt/
-git clone http://git.suckless.org/dmenu >/dev/null
+git clone http://git.suckless.org/dmenu
 cd dmenu
-make >/dev/null
-make install >/dev/null
+make
+make install
 
 echo "Setup dwmstatus"
 cd /opt/
-git clone http://git.suckless.org/dwmstatus >/dev/null
+git clone http://git.suckless.org/dwmstatus
 cd dwmstatus
-make >/dev/null
-make install >/dev/null
+make
+make install
 
 echo "Clean up"
-apt-get purge nano -y >/dev/null
-apt-get autoremove -y >/dev/null
-apt-get autoclean >/dev/null
-apt-get clean >/dev/null
+apt-get purge nano -y
+apt-get autoremove -y
+apt-get autoclean
+apt-get clean
 mkdir /mnt/samsung/
 
 echo "Reboot"
