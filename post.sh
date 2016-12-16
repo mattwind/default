@@ -33,9 +33,9 @@ usermod -a -G sudo $user
 
 echo "Extract dwm source"
 tar -xf /tmp/default/dwm/dwm-6.0.tar.gz -C /opt/
-cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm-6.0/
-cd /opt/dwm-6.0/
 ln -s /opt/dwm-6.0/ /opt/dwm/
+cp /tmp/dwm/dwm-systray-6.0.diff /opt/dwm/
+cd /opt/dwm/
 
 echo "Add systray patch"
 patch < dwm-systray-6.0.diff  
