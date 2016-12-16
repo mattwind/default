@@ -1,5 +1,5 @@
 while true; do
-   xsetroot -name "$(date)"
+   xsetroot -name "$( date +"%a %b %d / %F / %r" )"
    sleep 1
 done &
 
