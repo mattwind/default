@@ -3,12 +3,12 @@ user=`whoami`
 
 if [[ $EUID -ne 0 ]];
 then
-  echo "Customizing Slim"
-  sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
   mkdir ~/repos
   cd ~/repos
   echo "Clone default project"
   git clone https://github.com/mattwind/default.git ~/repos/default
+  echo "Customizing Slim"
+  sudo cp -R ~/repos/default/slim/* /usr/share/slim/themes/debian-lines/
   echo 
   echo "Setting up dotfiles"
   cp -r ~/repos/default/dotfiles/. ~/
