@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 user=$1
 
+if [ "$user" == "" ];
+then
+	echo "No user specified"
+	echo "./post.sh mwind"
+	exit 1
+fi
+
 apt-get install git -y
 cd /tmp
 git clone https://github.com/mattwind/default.git
