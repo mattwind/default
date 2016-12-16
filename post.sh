@@ -8,7 +8,7 @@ then
 fi
 
 echo "Install Git"
-apt-get install git -y >/dev/null
+apt-get install git -y 
 
 echo "Clone default project"
 cd /tmp
@@ -20,7 +20,7 @@ apt-get update
 apt-get upgrade -y
 
 echo "Install Packages"
-apt-get install `cat apt/packages.list` -y
+apt-get install `cat /tmp/default/apt/packages.list` -y
 
 echo "Add $user to fuse group"
 groupadd fuse
