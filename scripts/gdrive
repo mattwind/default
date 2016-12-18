@@ -1,2 +1,2 @@
 #!/bin/bash
-mount | grep /home/$USER/Documents >/dev/null || google-drive-ocamlfuse -o nonempty /home/$USER/Documents
+google-drive-ocamlfuse /home/$USER/Gdrive
