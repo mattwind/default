@@ -48,6 +48,7 @@ software-properties-common
 solaar
 ssh
 sudo
+qv4l2
 tcpdump
 terminator
 trayer
