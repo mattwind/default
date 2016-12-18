@@ -3,6 +3,7 @@ arandr
 build-essential
 caja
 camlp4-extra
+cheese
 chromium
 dos2unix
 eom
