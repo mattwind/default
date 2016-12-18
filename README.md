@@ -6,9 +6,11 @@ Run this after a vanilla debian net install. It will grab all the wanted [packag
 
 ```su -c "wget https://raw.github.com/mattwind/default/master/post.sh -O /tmp/s; bash /tmp/s `whoami`"```
 
+Once this is done setting up the packages and updates it will reboot.
+
 ### Step 2) Customize it
 
-Configure all the neat stuff
+Configure all the custom stuff!
 
 ```wget -q -O - https://raw.github.com/mattwind/default/master/customize.sh | bash```
 
