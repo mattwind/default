@@ -1,4 +1,5 @@
 alias ssh='cat ~/repos/dotfiles/.ssh/config.d/* >~/.ssh/config; ssh'
+alias update-repos='ln -s ~/Documents/Repos/* ~/repos/'
 
 alias vi='vim'
 alias date='date +"%c"'
