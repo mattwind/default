@@ -48,7 +48,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", "terminus-8:normal", "-nb", "#CCCCCC", "-nf", "#000000", "-sb", "#000000", "-sf", "#CCCCCC", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", "terminus-8:normal", "-nb", "#888844", "-nf", "#444422", "-sb", "#444422", "-sf", "#888844", NULL };
 static const char *termcmd[]  = { "terminator", NULL };
 
 static const char *xscreensavercmd[]  = { "/usr/bin/xscreensaver-command", "-lock", NULL };
