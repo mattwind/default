@@ -1,0 +1,2 @@
+#!/bin/bash
+ssvncviewer -scale .7 172.16.0.177
