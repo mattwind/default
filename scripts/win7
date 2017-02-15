@@ -1,2 +1,3 @@
 #!/bin/bash
+#VBoxManage setextradata "Windows 7 Pro" "CustomVideoMode1" "1920x1070x32"
 VBoxManage startvm "Windows 7 Pro"

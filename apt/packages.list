@@ -43,6 +43,7 @@ opam
 pavucontrol
 pkg-config
 qt4-qtconfig
+remmina
 screen
 shotwell
 slim
@@ -56,7 +57,7 @@ terminator
 trayer
 unzip
 vim
-virtualbox
+vlan
 vlc
 wireless-tools
 xcompmgr
