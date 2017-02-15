@@ -20,7 +20,7 @@ Configure all the custom stuff!
 
 ### Todo
 
-* Setup NFO Repository
+* Setup NFO repository
 * Setup dynamic SSH directory
 * Add keepass
 * Add custom scripts
