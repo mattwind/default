@@ -1,11 +1,30 @@
 #!/bin/bash
-palette="/tmp/palette.png"
-filters="fps=15,scale=420:-1:flags=lanczos"
 
-if [ "$1" != "" ];
-then
-  ffmpeg -i $1 -vf "$filters,palettegen" -y $palette
-  ffmpeg -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y ~/Pictures/$1.gif
-else
-  echo "Missing video, try gif ~/Download/vide.mp4"
+dur=$2
+fps=$3
+res=$4
+
+if [ "$res" == "" ] || [ "$fps" == "" ]; then
+  echo "usage: gif animate.gif <duration> <framerate> <width>"
+  exit
 fi
+
+palette="/tmp/palette.png"
+filters="fps=$fps,scale=$res:-1:flags=lanczos"
+paletteops="stats_mode=diff"
+paletteops=""
+
+ffmpeg -f v4l2 \
+  -s 960x720 \
+  -pix_fmt yuv420p \
+  -i /dev/video1 \
+  -ss 1 \
+  -t $dur \
+  -r 30 \
+  -vcodec libx264 \
+  -threads 0 video.avi
+
+ffmpeg -v warning -i video.avi -vf "$filters,palettegen=$paletteops" -y $palette
+ffmpeg -v warning -i video.avi -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $1
+
+rm video.avi

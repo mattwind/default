@@ -21,6 +21,7 @@ alias back='cd $OLDPWD'
 # history
 alias h='history'
 alias hm='history | more'
+alias hh='history | cut -c 8-'
 
 # grep
 alias gi='grep -i'

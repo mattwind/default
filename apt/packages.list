@@ -4,7 +4,6 @@ arandr
 build-essential
 caja
 camlp4-extra
-cheese
 chromium
 dia
 dos2unix
@@ -24,9 +23,7 @@ iw
 jmtpfs
 libcurl4-gnutls-dev
 libfreetype6-dev
-libfuse-dev
 libqt4-dev
-libreoffice
 libsqlite3-dev
 libssl-dev
 libxft-dev
@@ -38,6 +35,7 @@ mate-power-manager
 mono-complete
 monodevelop
 network-manager-gnome
+ncdu
 ngrep
 nmap
 ocaml
